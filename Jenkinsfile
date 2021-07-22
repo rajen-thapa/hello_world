@@ -4,9 +4,9 @@ pipeline {
   stage('Docker Build and Tag') {
            steps {
               
-                sh 'docker build -t ibanez6123/python_app:1.0 .' 
-                sh 'docker tag pythonapp ibanez6123/python_app:1.0'
-                sh 'docker tag pyhtonapp ibanez6123/python_app:$BUILD_NUMBER'
+                sh 'docker build -t ibanez6123/python_app:latest .' 
+                sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:1.0'
+                sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:$BUILD_NUMBER'
                
           }
         }
