@@ -14,7 +14,7 @@ pipeline {
   stage('Publish image to Docker Hub') {
           
             steps {
-        withDockerRegistry([ credentialsId: "Dockerhub_creds", url: "https://hub.docker.com/repository/docker/ibanez6123/python_app" ]) {
+        withDockerRegistry([ credentialsId: "Dockerhub_creds", url: "" ]) {
           sh  'docker push ibanez6123/python_app:1.0'
           sh  'docker push ibanez6123/python_app:$BUILD_NUMBER' 
         }
