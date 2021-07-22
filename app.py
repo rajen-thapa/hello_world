@@ -10,7 +10,7 @@ client=pymongo.MongoClient("mongodb://192.168.136.130:27017/",username = "rnwuse
 mydb=client["Developer"]
 information=mydb.rajen
 record=[{"name": "Krishna", "age": 27},{"name": "Shanti", "age": 50}]
-information.insert(record)
+information.insert_many(record)
 
 START = time.time()
 
