@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 import pymongo
 from pymongo import MongoClient
-client = pymongo.MongoClient("mongodb://192.168.136.130:27017/"), username = "rnwuser", password = "Irg@370ahmz"
+client = pymongo.MongoClient("mongodb://rnwuser:Irg@370ahmz@192.168.136.130:27017/")
 mydb = client["Production"]
 information = mydb["jiten"]
 record = [{"name": "Krishna", "age": 27},{"name": "Shanti", "age": 50}]
