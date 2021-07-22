@@ -5,7 +5,7 @@ pipeline {
            steps {
               
                 sh 'docker build -t ibanez6123/python_app:latest .' 
-                sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:1.0'
+                sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:2.0'
                
           }
         }
@@ -14,7 +14,7 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "Dockerhub_creds", url: "" ]) {
-          sh  'docker push ibanez6123/python_app:1.0'
+          sh  'docker push ibanez6123/python_app:2.0'
         }
                   
           }
@@ -29,7 +29,7 @@ pipeline {
       stage('Run Docker container on Jenkins Agent') {
              
             steps {
-                sh "docker run -d -p 4030:4030 --name=mypythonapp ibanez6123/python_app:1.0"
+                sh "docker run -d -p 4030:4030 --name=mypythonapp ibanez6123/python_app:2.0"
             }
         }
     }
