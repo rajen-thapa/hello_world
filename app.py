@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 import pymongo
 from pymongo import MongoClient
-client=pymongo.MongoClient("mongodb://192.168.136.130:27017/",username = "rnwuser",password = "Irg@370ahmz")
-mydb=client["Production"]
-information=mydb.rajen
-record=[{"name": "Krishna", "age": 27},{"name": "Shanti", "age": 50}]
+client = pymongo.MongoClient('mongodb://192.168.136.130:27017/')
+mydb = client.get_database('Production')
+information = mydb.rajen
+record = [{"name": "Krishna", "age": 27},{"name": "Shanti", "age": 50}]
 information.insert_many(record)
 
 START = time.time()
