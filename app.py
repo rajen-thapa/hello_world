@@ -5,6 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 import pymongo
+from pymongo import MongoClient
 client=pymongo.MongoClient("mongodb://192.168.136.130:27017/",username = "rnwuser",password = "Irg@370ahmz")
 mydb=client["Developer"]
 information=mydb.rajen
