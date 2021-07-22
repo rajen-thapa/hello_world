@@ -6,7 +6,6 @@ pipeline {
               
                 sh 'docker build -t ibanez6123/python_app:latest .' 
                 sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:1.0'
-                sh 'docker tag ibanez6123/python_app:latest ibanez6123/python_app:$BUILD_NUMBER'
                
           }
         }
@@ -16,7 +15,6 @@ pipeline {
             steps {
         withDockerRegistry([ credentialsId: "Dockerhub_creds", url: "" ]) {
           sh  'docker push ibanez6123/python_app:1.0'
-          sh  'docker push ibanez6123/python_app:$BUILD_NUMBER' 
         }
                   
           }
