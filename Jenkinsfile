@@ -25,7 +25,7 @@ pipeline {
       stage('Run Docker container on Jenkins Agent') {
              
             steps {
-                sh "docker run -d -p 4030:80 ibanez6123/python_app:1.0"
+                sh "docker run -d -p 4030:4030 ibanez6123/python_app:1.0"
             }
         }
     }
